@@ -154,7 +154,7 @@ void update_hall_state(TRAP_DRIVE *trap_drive)
 {
   trap_drive->period = __HAL_TIM_GET_COUNTER(trap_drive->hall_tim);
   __HAL_TIM_SET_COUNTER(trap_drive->hall_tim, 0);
-  HAL_TIM_Base_Start_IT(trap_drive->hall_tim);
+  HAL_TIM_Base_Start(trap_drive->hall_tim);
 
   trap_drive->hall_index = (HAL_GPIO_ReadPin(HALL_C_GPIO_Port, HALL_C_Pin) << 2) |
                            (HAL_GPIO_ReadPin(HALL_B_GPIO_Port, HALL_B_Pin) << 1) |
