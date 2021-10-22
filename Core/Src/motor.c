@@ -41,6 +41,14 @@ void init_trap_drive(TRAP_DRIVE *trap_drive, TIM_HandleTypeDef *pwm_tim, TIM_Han
   else {
     trap_drive->polarity = -1;
   }
+
+  disable_trap_drive(trap_drive);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+  HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
 }
 
 void enable_trap_drive(TRAP_DRIVE *trap_drive, uint8_t enable)
