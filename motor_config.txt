@@ -1,9 +1,7 @@
-// Thu Sep 12 15:27:59 PDT 2019
+// Thu Aug 04 22:53:49 PDT 2022
 
-=> baud rate: 921600
-=> message period: 2
-=> command range: 1100, 0, 
-=> button text: IDLE, RUN,
+=> command range: 1000, -1000, 
+=> button text: IDLE, RUN, 
 
 
 index || state name           || state max       || state min       || display || color    || ratio
@@ -25,7 +23,7 @@ index || state name           || state max       || state min       || display |
 14    || state 14             || 1200.0          || -1200.0         || false   || yellow   || 1.0
 
 
-index || bit name (status)             || bits
+index || bit name (command)            || bits
 -----------------------------------------------
 00    || reserved 0                    || 1
 01    || watchdog fault                || 1
@@ -33,9 +31,41 @@ index || bit name (status)             || bits
 03    || ROM fault                     || 1
 
 
-index || parameter name          || type  || value
----------------------------------------------------
-0000  || Parameters              || long  || 4
-0001  || InfoSwChecksum          || long  || -602876262
-0002  || InfoSwVersion           || float || 2.0
-0003  || InfoCanNode             || long  || 12
+index || parameter name                   || type  || value
+------------------------------------------------------------
+0000  || Parameters                       || long  || 36
+0001  || InfoSwChecksum                   || long  || -602876262
+0002  || InfoSwVersion                    || float || 2.0
+0003  || InfoCanNode                      || long  || 12
+0004  || PidPosPropGain                   || float || 3.14159
+0005  || PidPosPropLimit                  || long  || 1000
+0006  || Reserved1                        || long  || -1000
+0007  || Reserved2                        || long  || 2000
+0008  || Reserved3                        || long  || 3000
+0009  || Reserved4                        || long  || 4000
+0010  || Reserved5                        || long  || 4800
+0011  || Reserved6                        || long  || 5800
+0012  || Reserved7                        || long  || 6800
+0013  || Reserved8                        || long  || 7800
+0014  || Reserved9                        || long  || 8800
+0015  || Reserved10                       || long  || 9800
+0016  || Reserved11                       || long  || 10800
+0017  || Reserved12                       || long  || 11800
+0018  || Reserved13                       || long  || 12800
+0019  || Reserved14                       || long  || 13800
+0020  || Reserved15                       || long  || 14800
+0021  || Reserved16                       || long  || 15800
+0022  || Reserved17                       || long  || 16800
+0023  || Reserved18                       || long  || 17800
+0024  || Reserved19                       || long  || 18800
+0025  || Reserved20                       || long  || 19800
+0026  || Reserved21                       || long  || 20800
+0027  || Reserved22                       || long  || 21800
+0028  || Reserved23                       || long  || 22800
+0029  || Reserved24                       || long  || 23800
+0030  || Reserved25                       || long  || 24800
+0031  || Reserved26                       || long  || 25800
+0032  || Reserved27                       || long  || 26800
+0033  || Reserved28                       || long  || 27800
+0034  || Reserved29                       || long  || 28800
+0035  || Reserved30                       || long  || 29800
